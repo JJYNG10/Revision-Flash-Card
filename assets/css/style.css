@@ -1,0 +1,107 @@
+/* CSS Variables*/
+:root {
+/* fonts*/
+    --primary-font: "Inter", sans-serif;
+    --secondary-font: "Macondo", cursive;
+
+/* colour plate*/
+    --primary-color-darkpurple: #6A5ACD; /* dark purple */
+    --primary-color-mediumpurple: #7B6FE8; /* mid purple */
+    --primary-color-lightpurple: #9C8CFF; /* light purple */
+
+    --secondary-color: #AED9E0; /* Light blue */ 
+    --secondary-color-white: white; /* White */ 
+    --secondary-color-grey: #E6E6EF; /* grey */ 
+
+    --pale-color-ocean-blu: #B8F2E6; /* ocean blue */ 
+    --pale-color-eggshell: #FAF3DD; /* eggshell */ 
+    --pale-color-red: #FFA69E; /* Pale red */    
+    --pale-color-yellow: #F9CB40; /* Pale yellow */  
+}
+
+/* Heading Font */
+/*h1 h2 h3 {color: var(--primary-font);}*/
+h1, h2{font-size: 30px;
+       font-family: "Shippori Antique B1", sans-serif;
+       font-weight: 400;
+       font-style: normal;
+       color: var(--primary-color-darkpurple);
+}
+  h3 { font-family: "Inter", sans-serif;
+       font-weight: 350;
+       font-style: normal;
+       color: var(--primary-color-lightpurplem)}
+    
+/* Nav-Modal */
+.modal-header {
+  border-bottom: none;          
+  padding-bottom: 0;
+}
+
+.modal-header .btn-close {
+  margin-top: 20px;            
+}
+
+/* Nav-Modal lists */
+.modal-body ul {
+  list-style: none;      /* remove bullets */
+  padding-left: 0;       /* remove left indent */
+  margin: 0;
+}
+
+/* Space between menu items */
+.modal-body li {
+  padding-bottom: 40px;
+  padding-left: 30px
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%237B6FE8' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  border:none;
+  box-shadow: none;
+}
+
+/* interactive text hover element */
+.text-transform {transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;}
+
+.text-transform:hover {transform: scale( 1.10);
+/*box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); (showdow when zoomed in) */
+}
+
+.div-one{
+    background-color: #AED9E0;
+    color: #AED9E0;
+    min-height: 300px;
+}
+
+.div-two{
+    background-color: #9C8CFF;
+    color: #9C8CFF;
+        min-height: 300px;
+}
+
+.div-three{
+    background-color: #F9CB40;
+    color: #F9CB40;
+        min-height: 300px;
+}
+
+/* Media queries */
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+    .logo {width:"150px"}   
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+     .logo {width:200px;}
+    }
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { .logo {width:250px;} 
+   }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { .logo {width:250px}
+   }
