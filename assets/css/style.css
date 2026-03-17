@@ -1,86 +1,87 @@
-/* CSS Variables*/
 :root {
-/* fonts*/
-    --primary-font: "Inter", sans-serif;
-    --secondary-font: "Macondo", cursive;
+  /* fonts */
+  --primary-font: "Inter", sans-serif;
+  --secondary-font: "Macondo", cursive;
 
-/* colour plate*/
-    --primary-color-darkpurple: #6A5ACD; /* dark purple */
-    --primary-color-mediumpurple: #7B6FE8; /* mid purple */
-    --primary-color-lightpurple: #9C8CFF; /* light purple */
+  /* colour palette */
+  --primary-color-darkpurple: #6A5ACD;
+  --primary-color-mediumpurple: #7B6FE8;
+  --primary-color-lightpurple: #9C8CFF;
 
-    --secondary-color: #AED9E0; /* Light blue */ 
-    --secondary-color-white: white; /* White */ 
-    --secondary-color-grey: #E6E6EF; /* grey */ 
+  --secondary-color: #AED9E0;
+  --secondary-color-white: white;
+  --secondary-color-grey: #E6E6EF;
 
-    --pale-color-ocean-blu: #B8F2E6; /* ocean blue */ 
-    --pale-color-eggshell: #FAF3DD; /* eggshell */ 
-    --pale-color-red: #FFA69E; /* Pale red */    
-    --pale-color-yellow: #F9CB40; /* Pale yellow */  
+  --pale-color-ocean-blu: #B8F2E6;
+  --pale-color-eggshell: #FAF3DD;
+  --pale-color-red: #FFA69E;
+  --pale-color-yellow: #F9CB40;
 }
 
-/* Heading Font */
-/*h1 h2 h3 {color: var(--primary-font);}*/
-h1, h2{font-size: 30px;
-       font-family: "Shippori Antique B1", sans-serif;
-       font-weight: 400;
-       font-style: normal;
-       color: var(--primary-color-darkpurple);
+h1, h2 {
+  font-size: 30px;
+  font-family: "Shippori Antique B1", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--primary-color-darkpurple);
 }
-  h3 { font-family: "Inter", sans-serif;
-       font-weight: 350;
-       font-style: normal;
-       color: var(--primary-color-lightpurplem)}
-    
-/* Nav-Modal */
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 350;
+  font-style: normal;
+  color: var(--primary-color-lightpurple);
+}
+
 .modal-header {
-  border-bottom: none;          
+  border-bottom: none;
   padding-bottom: 0;
 }
 
 .modal-header .btn-close {
-  margin-top: 20px;            
+  margin-top: 20px;
 }
 
-/* Nav-Modal lists */
 .modal-body ul {
-  list-style: none;      /* remove bullets */
-  padding-left: 0;       /* remove left indent */
+  list-style: none;
+  padding-left: 0;
   margin: 0;
 }
 
-/* Space between menu items */
 .modal-body li {
   padding-bottom: 40px;
-  padding-left: 30px
+  padding-left: 30px;
+}
+
+.navbar-toggler {
+  border: none;
+  box-shadow: none;
 }
 
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%237B6FE8' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-  border:none;
-  box-shadow: none;
 }
 
-/* interactive text hover element */
-.text-transform {transition: transform 0.35s ease, box-shadow 0.35s ease;
-  will-change: transform;}
+.text-transform {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
 
-.text-transform:hover {transform: scale( 1.10);
-/*box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); (showdow when zoomed in) */
+.text-transform:hover {
+  transform: scale(1.10);
 }
 
 #revision-cards {
-    padding: 40px;
+  padding: 40px;
 }
 
 .card {
-    border:1px solid var(--primary-color-lightpurple);
-    border-radius: 15px;
-    padding: 0 0 20px 0;
-    margin-bottom: 15px;
-    background-color: var(--secondary-color-white);
-
-    box-shadow: 0 4px 10px var(--secondary-color-grey);
+  border: 1px solid var(--primary-color-lightpurple);
+  border-radius: 15px;
+  padding: 0 0 20px 0;
+  margin-bottom: 15px;
+  background-color: var(--secondary-color-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .card h3 {
@@ -93,26 +94,59 @@ h1, h2{font-size: 30px;
   color: var(--primary-color-lightpurple);
 }
 
+.card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
 .card:hover {
   transform: translateY(-3px);
   transition: 0.2s;
 }
 
-/* Media queries */
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { 
-    .logo {width:"150px"}   
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) { 
-     .logo {width:200px;}
-    }
+.icon {
+  color: rgb(106, 90, 205);
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { .logo {width:250px;} 
-   }
+.icon:hover {
+  transform: scale(1.1);
+}
 
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) { .logo {width:250px}
-   }
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .logo {
+    width: 150px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .logo {
+    width: 200px;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .logo {
+    width: 250px;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .logo {
+    width: 250px;
+  }
+}
