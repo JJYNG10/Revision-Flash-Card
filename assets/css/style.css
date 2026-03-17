@@ -69,22 +69,33 @@ h1, h2{font-size: 30px;
 /*box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); (showdow when zoomed in) */
 }
 
-.div-one{
-    background-color: #AED9E0;
-    color: #AED9E0;
-    min-height: 300px;
+#revision-cards {
+    padding: 40px;
 }
 
-.div-two{
-    background-color: #9C8CFF;
-    color: #9C8CFF;
-        min-height: 300px;
+.card {
+    border:1px solid var(--primary-color-lightpurple);
+    border-radius: 15px;
+    padding: 0 0 20px 0;
+    margin-bottom: 15px;
+    background-color: var(--secondary-color-white);
+
+    box-shadow: 0 4px 10px var(--secondary-color-grey);
 }
 
-.div-three{
-    background-color: #F9CB40;
-    color: #F9CB40;
-        min-height: 300px;
+.card h3 {
+  margin: 0 0 8px;
+  color: var(--primary-color-darkpurple);
+}
+
+.card p {
+  margin: 0;
+  color: var(--primary-color-lightpurple);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  transition: 0.2s;
 }
 
 /* Media queries */
