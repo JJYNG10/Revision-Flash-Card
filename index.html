@@ -41,113 +41,14 @@
   </head>
 
   <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg top-0 start-0 w-100">
-      <div class="container">
-        <a class="logo active" href="index.html"
-          ><img
-            src="assets/images/logo/logo.png"
-            alt="revise smart logo"
-            width="150"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse fullpage-nav" id="navbarNav">
-          <ul class="navbar-nav ms-auto gap-4">
-            <li class="nav-item">
-              <a class="nav-link text-transform" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-transform" href="#recent-card"
-                >Recent Cards</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-transform"
-                href="./pages/revision-card.html"
-                >Revision Cards</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-transform" href="./pages/create-card.html"
-                >Create Cards</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      role="dialog"
-      aria-label="Main navigation menu"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="btn-close sharp-corners"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <ul>
-              <li class="nav-item-modal">
-                <a class="nav-link text-transform" href="index.html">
-                  <h1>Home</h1></a
-                >
-              </li>
-              <li class="nav-item-modal">
-                <a
-                  class="nav-link text-transform"
-                  href="./pages/recent-card.html"
-                  ><h1>Recent Cards</h1></a
-                >
-              </li>
-              <li class="nav-item-modal">
-                <a
-                  class="nav-link text-transform"
-                  href="./pages/revision-card.html"
-                  ><h1>Revision Cards</h1></a
-                >
-              </li>
-              <li class="nav-item-modal">
-                <a
-                  class="nav-link text-transform"
-                  href="./pages/create-card.html"
-                  ><h1>Create Cards</h1></a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Main -->
     <header>
       <section>
         <div class="container">
           <div class="row">
-            <h1>Overall Progress</h1>
-            <!-- graph -->
-            <div class="col-sm-12 col-lg-6"></div>
+            <div class="col-sm-6 col-lg-6 title">
+              <span>Revision Cards</span>
+            </div>
           </div>
         </div>
       </section>
@@ -157,8 +58,11 @@
       <section>
         <div class="container">
           <div class="row">
-            <div class="col-12">
-              <h1 id="recent-card">Recent Cards</h1>
+            <div
+              class="col-12 d-flex justify-content-between align-items-center"
+            >
+              <span class="sub-title"> My Cards </span>
+              <i class="fa-solid fa-filter me-5"></i>
             </div>
 
             <div class="col-12 col-md-8 col-lg-6">
