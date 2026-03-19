@@ -130,3 +130,29 @@ const cardFolders = [
   ]
 }
 ]
+
+function displayCardFolder() {
+  const container = document.getElementById("revision-cards");
+  container.innerHTML ="";
+
+  cardFolders.forEach(folder => {
+    const folderHTML= `
+        <div class="card">
+          <div class="card-content">
+            <h3>${folder.name}</h3>
+            <p>${folder.description}</p>
+            <p>${folder.cards.length}</p>
+            <div class="card-actions">
+              <i class="fa-solid fa-trash-can icon" onclick="deleteCard(${card.id})"></i>
+              <i class="fa-solid fa-gear icon"></i>
+              <i class="fa-solid fa-share-nodes icon"></i>
+            </div>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML += folderHTML;
+  });
+}
+
+displayCardFolder();
