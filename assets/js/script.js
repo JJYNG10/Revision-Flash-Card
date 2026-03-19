@@ -137,7 +137,7 @@ function displayCardFolder() {
 
   cardFolders.forEach(folder => {
     const folderHTML= `
-        <div class="card">
+        <div class="card folder-card" data-id="${folder.id}">
           <div class="card-body">
             <h2>${folder.name}</h3>
             <p>${folder.description}</p>
@@ -156,24 +156,27 @@ function displayCardFolder() {
 
 displayCardFolder();
 
-// event listener
-document.addEventListener("click", function(e) {
-  if (e.target.closest(".folder-card")) {
-    const card = e.target.closest(".folder-card");
-    const id = card.dataset.id;
-    openFolder(Number(id));
-  }
-});
-
 // pop up revision modal
 let currentFolder=null;
 let currentCardIndex=0;
 
+// event listener
+document.addEventListener("click", function(e) {
+  if (e.target.closest(".folder-card")) {
+    const clickedCard = e.target.closest(".folder-card");
+   
+    if (clickedCard) {
+      const id = Number(clickedCard.dataset.id);
+      optionFolder(Id);
+    }
+  }
+});
+
 function optionFolder(folderId) {
-  currentFolder=folder.find(folder=>folder.Id===folderId);
+  currentFolder=cardFolders.find(folder=>folder.Id===folderId);
   currentCardIndex=0;
 
-  if (!curentFolder) return;
+  if (!currentFolder) return;
 
   const modal= document.getElementById("revision-modal");
   const modalQuestion=document.getElementById("modal-question");
@@ -181,3 +184,5 @@ function optionFolder(folderId) {
   modalQuestion.textContent = currentFolder.cards[currentCardIndex].question;
   modal.style.display="flex";
 }
+
+console.log("Opened folder:", folderId);
