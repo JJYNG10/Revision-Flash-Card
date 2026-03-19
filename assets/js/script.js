@@ -4,8 +4,8 @@ const cardFolders = [
   id:1,
   name:"Life in Uk",
   description:"Most popular 24 question for life in UK exam",
-  Difficulty: "medium",
-  favourte: false,
+  difficulty: "medium",
+  favourite: false,
   cards: [
       {
         id: 1,
@@ -139,7 +139,7 @@ function displayCardFolder() {
     const folderHTML= `
         <div class="card folder-card" data-id="${folder.id}">
           <div class="card-body">
-            <h2>${folder.name}</h3>
+            <h2>${folder.name}</h2>
             <p>${folder.description}</p>
             <p>${folder.cards.length}</p>
             <div class="card-actions">
@@ -162,18 +162,19 @@ let currentCardIndex=0;
 
 // event listener
 document.addEventListener("click", function(e) {
-  if (e.target.closest(".folder-card")) {
-    const clickedCard = e.target.closest(".folder-card");
+     const clickedCard = e.target.closest(".folder-card");
    
     if (clickedCard) {
       const id = Number(clickedCard.dataset.id);
-      optionFolder(Id);
+      optionFolder(id);
     }
   }
-});
+);
 
 function optionFolder(folderId) {
-  currentFolder=cardFolders.find(folder=>folder.Id===folderId);
+  console.log("opened folder:",folderId)
+
+  currentFolder=cardFolders.find(folder=>folder.id===folderId);
   currentCardIndex=0;
 
   if (!currentFolder) return;
@@ -184,5 +185,3 @@ function optionFolder(folderId) {
   modalQuestion.textContent = currentFolder.cards[currentCardIndex].question;
   modal.style.display="flex";
 }
-
-console.log("Opened folder:", folderId);
