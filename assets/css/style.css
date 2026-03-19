@@ -145,6 +145,16 @@ h3 {
   justify-content: center;
   align-items: center;}
 
+  #close-modal-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .logo {

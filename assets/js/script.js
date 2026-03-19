@@ -160,7 +160,7 @@ displayCardFolder();
 let currentFolder=null;
 let currentCardIndex=0;
 
-// event listener
+// click event listener
 document.addEventListener("click", function(e) {
      const clickedCard = e.target.closest(".folder-card");
    
@@ -171,6 +171,7 @@ document.addEventListener("click", function(e) {
   }
 );
 
+// Open revision cards
 function optionFolder(folderId) {
   console.log("opened folder:",folderId)
 
@@ -185,3 +186,14 @@ function optionFolder(folderId) {
   modalQuestion.textContent = currentFolder.cards[currentCardIndex].question;
   modal.style.display="flex";
 }
+
+
+// close button event listener
+document.addEventListener("click", function(e) {
+     const closeBtn = e.target.closest("#close-modal-btn");
+     const modal = document.getElementById("revision-modal");
+    if (closeBtn) {
+      modal.style.display="none";
+    }
+  }
+);
