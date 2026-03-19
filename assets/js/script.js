@@ -139,13 +139,12 @@ function displayCardFolder() {
     const folderHTML= `
         <div class="card">
           <div class="card-body">
-            <h3>${folder.name}</h3>
+            <h2>${folder.name}</h3>
             <p>${folder.description}</p>
             <p>${folder.cards.length}</p>
             <div class="card-actions">
-              <i class="fa-solid fa-trash-can icon")"></i>
+              <i class="fa-regular fa-star icon"></i>  
               <i class="fa-solid fa-gear icon"></i>
-              <i class="fa-solid fa-share-nodes icon"></i>
             </div>
           </div>
         </div>
@@ -156,3 +155,15 @@ function displayCardFolder() {
 }
 
 displayCardFolder();
+
+// pop up revision modal
+
+let currentFolder=null;
+let currentCardIndex=0;
+
+function optionFolder(folderId) {
+  currentFolder=folder.find(folder=>folder.Id===folderId);
+  currentCardIndex=0;
+
+  if (!cuurentFolder) return;
+}
