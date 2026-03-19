@@ -156,8 +156,16 @@ function displayCardFolder() {
 
 displayCardFolder();
 
-// pop up revision modal
+// event listener
+document.addEventListener("click", function(e) {
+  if (e.target.closest(".folder-card")) {
+    const card = e.target.closest(".folder-card");
+    const id = card.dataset.id;
+    openFolder(Number(id));
+  }
+});
 
+// pop up revision modal
 let currentFolder=null;
 let currentCardIndex=0;
 
@@ -165,5 +173,11 @@ function optionFolder(folderId) {
   currentFolder=folder.find(folder=>folder.Id===folderId);
   currentCardIndex=0;
 
-  if (!cuurentFolder) return;
+  if (!curentFolder) return;
+
+  const modal= document.getElementById("revision-modal");
+  const modalQuestion=document.getElementById("modal-question");
+
+  modalQuestion.textContent = currentFolder.cards[currentCardIndex].question;
+  modal.style.display="flex";
 }
