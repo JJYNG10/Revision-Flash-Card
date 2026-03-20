@@ -115,8 +115,6 @@ h3 {
   font-size: 16px;
   cursor: pointer;
   transition: 0.2s;
-  border: none;
-  background: transparent;
 }
 
 .icon:hover {
@@ -144,15 +142,42 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
   #modal-question{
   font-size: 40px;
   padding: 0px 40px;  
-  display: flex;
   justify-content: center;
   align-items: center;
   }
+
+  /* Modal buttons */
+.modal-click-button{
+  position: absolute;
+  bottom: 90px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+  .btn-icon{ 
+  border: none;
+  outline-style: none;
+  background: transparent;
+  cursor: pointer;
+  }
+
+   .btn-icon i{
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+   } 
+
+  .fa-solid.fa-star {
+  color: gold;
+}
 
   #close-modal-btn {
   position: absolute;

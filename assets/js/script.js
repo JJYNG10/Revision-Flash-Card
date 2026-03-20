@@ -197,3 +197,13 @@ document.addEventListener("click", function(e) {
     }
   }
 );
+
+// Fav button
+const facBtn = document.getElementById("btn-click-fav");
+
+favBtn.addEventListener("click",function() {
+  const icon = favBtn.querySelector("i");
+
+  icon.classList.toggle("fa-regular");
+  icon.classList.toggle("fa-solid");
+})
