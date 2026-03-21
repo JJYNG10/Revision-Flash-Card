@@ -199,11 +199,48 @@ document.addEventListener("click", function(e) {
 );
 
 // Fav button
-const facBtn = document.getElementById("btn-click-fav");
+document.getElementById("btn-click-fav").addEventListener("click", function () {
+  if (!currentFolder) return;
+  const currentCard = currentFolder.cards[currentCardIndex];
+  currentCard.favourite = !currentCard.favourite;
+  showCurrentQuestion(); 
+});
 
-favBtn.addEventListener("click",function() {
-  const icon = favBtn.querySelector("i");
 
-  icon.classList.toggle("fa-regular");
-  icon.classList.toggle("fa-solid");
-})
+
+// show current question
+function showCurrentQuestion() {
+    if (!currentFolder) return;
+  const modalQuestion = document.getElementById("modal-question");
+  const favBtn = document.querySelector("#btn-click-fav i");
+
+  modalQuestion.textContent=currentFolder.cards[currentCardIndex].question;
+
+  if (currentFolder.cards[currentCardIndex].favourite) {
+    favBtn.classList.remove("fa-regular");
+    favBtn.classList.add("fa-solid");
+  } else {
+    favBtn.classList.remove("fa-solid");
+    favBtn.classList.add("fa-regular");
+  }
+}
+
+// reveal answer 
+let revealAnswer= false;
+document.getElementById("btn-reveal").addEventListener("click", function () {
+if (!currentFolder) return;
+
+const modalText= document.getElementById("modal-question");
+const currentCard = currentFolder.cards[currentCardIndex];
+const buttonText = this.querySelector("span");
+
+  if (!revealAnswer) {
+    modalText.textContent = currentCard.answer;
+    buttonText.textContent = "Hide Answer";
+    revealAnswer=true;
+  } else {
+    modalText.textContent=currentCard.question;
+    buttonText.textContent="Reveal Answer"
+    revealAnswer=false;
+  }
+});

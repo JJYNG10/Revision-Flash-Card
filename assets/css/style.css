@@ -152,6 +152,23 @@ h3 {
   align-items: center;
   }
 
+/* Answer buttons */
+.display-answer {
+  position: absolute;
+  bottom: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.display-answer span{
+  color: var(--primary-color-darkpurple);
+  font-size: 25px;
+  font-weight: 600;
+}
+
+
   /* Modal buttons */
 .modal-click-button{
   position: absolute;
