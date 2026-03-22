@@ -276,9 +276,16 @@ document.addEventListener("click", function(e) {
 document.getElementById("btn-click-fav").addEventListener("click", function () {
   if (!currentFolder) return;
   const currentCard = currentFolder.cards[currentCardIndex];
-  currentCard.favourite = !currentCard.favourite;
+  const favIcon =document.querySelector("#btn-click-fav i");
 
-  showCurrentQuestion(); 
+  currentCard.favourite=true;
+
+  favIcon.classList.remove("fa-regular");
+  favIcon.classList.add("fa-solid");
+  
+  setTimeout(() => {
+   gotoNextCard() 
+  }, 200);
 });
 
 // show current question

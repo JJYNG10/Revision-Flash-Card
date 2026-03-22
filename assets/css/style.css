@@ -114,10 +114,10 @@ h3 {
   color: rgb(106, 90, 205);
   font-size: 16px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: transform 0.2s ease;
 }
 
-.icon:hover {
+.icon:active {
   transform: scale(1.1);
 }
 
