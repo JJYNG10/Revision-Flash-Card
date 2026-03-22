@@ -10,122 +10,194 @@ const cardFolders = [
       {
         id: 1,
         question: "What are the 40 days before Easter called?",
-        answer: "Lent"
+        answer: "Lent",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 2,
         question: "Which country’s flag is NOT part of the Union Flag?",
-        answer: "Wales"
+        answer: "Wales",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 3,
         question: "What is the minimum age required to serve on a jury?",
-        answer: "18"
+        answer: "18",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 4,
         question: "Who was the first female Prime Minister of the UK?",
-        answer: "Margaret Thatcher"
+        answer: "Margaret Thatcher",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 5,
         question: "When did the UK leave the EU following the Brexit vote?",
-        answer: "2020"
+        answer: "2020",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 6,
         question: "Which famous British landmark is located in Greenwich?",
-        answer: "The O2"
+        answer: "The O2",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 7,
         question: "What did Sir Frank Whittle invent in the 1930s?",
-        answer: "The jet engine."
+        answer: "The jet engine.",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 8,
         question: "Who wrote the poem 'The Daffodils'?",
-        answer: "William Wordsworth"
+        answer: "William Wordsworth",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 9,
         question: "What is the 'Ashes'?",
-        answer: "A famous cricket competition played between England and Australia"
+        answer: "A famous cricket competition played between England and Australia",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 10,
         question: "Who was given the title of Lord Protector?",
-        answer: "Oliver Cromwell"
+        answer: "Oliver Cromwell",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 11,
         question: "Which king was defeated at the Battle of Hastings in 1066?",
-        answer: "Harold Godwinson (King Harold)"
+        answer: "Harold Godwinson (King Harold)",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 12,
         question: "What is the name of the building where the Houses of Parliament are located?",
-        answer: "The Palace of Westminster"
+        answer: "The Palace of Westminster",
+        remembered: false,
+        notRemembered: false,
+        favourite: false,
       },
       {
         id: 13,
         question: "Which Scottish city is known as the 'City of Discovery' and is associated with the RRS Discovery?",
-        answer: "Dundee"
+        answer: "Dundee",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 14,
         question: "What is the name of the ceremony where the Queen/King officially opens a new session of Parliament?",
-        answer: "The State Opening of Parliament"
+        answer: "The State Opening of Parliament",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 15,
         question: "Which British athlete won two gold medals for the 800m and 1500m at the 2004 Olympic Games?",
-        answer: "Dame Kelly Holmes"
+        answer: "Dame Kelly Holmes",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 16,
         question: "What document, signed in 1215, limited the power of the King?",
-        answer: "The Magna Carta"
+        answer: "The Magna Carta",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 17,
         question: "What are 'The Troubles'?",
-        answer: "A period of conflict in Northern Ireland that lasted about 30 years"
+        answer: "A period of conflict in Northern Ireland that lasted about 30 years",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 18,
         question: "Which of these is a famous British scientist who discovered the laws of gravity?",
-        answer: "Sir Isaac Newton"
+        answer: "Sir Isaac Newton",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 19,
         question: "How often are General Elections held in the UK?",
-        answer: "At least every 5 years"
+        answer: "At least every 5 years",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 20,
         question: "What is the name of the UK's currency?",
-        answer: "Pound Sterling (£)"
+        answer: "Pound Sterling (£)",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 21,
         question: "Who is the Patron Saint of Scotland?",
-        answer: "St Andrew"
+        answer: "St Andrew",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 22,
         question: "Which 19th-century nurse is famous for her work during the Crimean War?",
-        answer: "London"
+        answer: "London",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 23,
         question: "What is the capital of England?",
-        answer: "Florence Nightingale"
+        answer: "Florence Nightingale",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
       {
         id: 24,
         question: "What is the name of the official home of the Prime Minister?",
-        answer: "10 Downing Street"
+        answer: "10 Downing Street",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
       },
   ]
 }
@@ -244,3 +316,43 @@ const buttonText = this.querySelector("span");
     revealAnswer=false;
   }
 });
+
+// right (remembered) click function
+document.getElementById("btn-click-right").addEventListener("click", function(){
+  if (!currentFolder) return;
+
+  const currentCard= currentFolder.cards[currentCardIndex];
+  currentCard.remembered=true;
+  currentCard.notRemembered=false;
+
+  gotoNextCard()
+});
+
+// next question
+function gotoNextCard() {
+  if (!currentFolder) return;
+
+  currentCardIndex++;
+
+  if (currentCardIndex >= currentFolder.card.length) {
+    showFinalResults();
+    return;
+  }
+
+  showCurrentQuestion()
+}
+
+// left (NOT remembered) click function
+document.getElementById("btn-click-left").addEventListener("click", function(){
+  if (!currentFolder) return;
+
+  const currentCard= currentFolder.cards[currentCardIndex];
+  currentCard.remembered=false;
+  currentCard.notRemembered=true;
+
+  gotoNextCard()
+});
+
+
+// show final result
+//function showFinalResults() {}
