@@ -252,6 +252,9 @@ function optionFolder(folderId) {
 
   if (!currentFolder) return;
 
+  //shuffle cards
+  shuffleArray(currentFolder.cards);
+
   const modal= document.getElementById("revision-modal");
   const modalQuestion=document.getElementById("modal-question");
 
@@ -261,6 +264,13 @@ function optionFolder(folderId) {
   showCurrentQuestion();
 }
 
+// shuffle revision cards
+function shuffleArray(array) {
+  for (let a = array.length -1; a > 0; a--) {
+    const b = Math.floor(Math.random() * (a+1));
+    [array[a],array[b]]=[array[b],array[a]];
+  }
+}
 
 // close button event listener
 document.addEventListener("click", function(e) {
@@ -337,7 +347,7 @@ document.getElementById("btn-click-right").addEventListener("click", function(){
   currentCard.remembered=true;
   currentCard.notRemembered=false;
 
-  gotoNextCard()
+    animateToNextCard("right");
 });
 
 // next question
@@ -362,8 +372,30 @@ document.getElementById("btn-click-left").addEventListener("click", function(){
   currentCard.remembered=false;
   currentCard.notRemembered=true;
 
-  gotoNextCard()
+  animateToNextCard("left");
 });
+
+// left and right animation
+function animateToNextCard(direction){
+  if (!currentFolder) return;
+
+  const questionCard=document.getElementById("question-card");
+
+  if (direction === "left"){
+    questionCard.classList.add("slide-left");
+  } else {
+    questionCard.classList.add("slide-right");
+  }
+
+  setTimeout(() =>{
+    gotoNextCard();
+
+    questionCard.classList.remove("slid-left","slide-right");
+
+    setTimeout(() => {
+    questionCard.classList.remove("slide-reset");
+  },20);}300);
+}
 
 
 // show final result
@@ -374,15 +406,16 @@ function showFinalResults(){
   const notRememberedCount= currentFolder.cards.filter(card=>card.notRemembered).length;
   const favouriteCount= currentFolder.cards.filter(card=>card.favourite).length;
   modalQuestion.innerHTML = 
-  `<h1>Revision complete! </h1>
+  `<h1>Session Summary </h1>
   <br>
   <br>
-  <h2>Remebered Cards : ${rememberedCount} </h2>
-  <h2>Not Remembered : ${notRememberedCount} </h2>
-  <h2>Favourite Cards : ${favouriteCount} </h2>
+  <h2>Mastered: ${rememberedCount} </h2>
+  <h2>To Review: ${notRememberedCount} </h2>
+  <h2>Favourites : ${favouriteCount} </h2>
   <br>
   <h2>Total Cards: ${currentFolder.cards.length} </h2>`;
 
   document.querySelector(".display-answer").style.display="none";
   document.querySelector(".modal-click-button").style.display="none";
 }
+

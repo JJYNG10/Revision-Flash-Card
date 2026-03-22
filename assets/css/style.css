@@ -147,19 +147,19 @@ h3 {
 
   #modal-question{
   font-size: 40px;
-  padding: 0px 40px;  
-  justify-content: center;
-  align-items: center;
+  padding: 0px 20px;  
+  width: 100%;
+  text-align: center;
   }
 
 /* Answer buttons */
 .display-answer {
   position: absolute;
-  bottom: 20vh;
+  bottom: 12px;
+  left: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;  
+  justify-content: center; 
 }
 
 .display-answer span{
@@ -204,6 +204,35 @@ h3 {
   border: none;
   background: transparent;
   cursor: pointer;
+}
+
+/*question card border */
+.question-card {
+  position: relative;
+  width: 88%;
+  height: 82%;
+  border: 2px solid var(--primary-color-lightpurple);
+  box-sizing: border-box;
+  padding: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.35s ease,opacity 0.35s ease;
+}
+
+.slide-left{
+  transform: translateX(-120%);
+  opacity: 0;
+}
+.slide-right{
+  transform: translateX(120%);
+  opacity: 0;
+}
+.slid-reset{
+  transform: translateX(0);
+  opacity: 1;
 }
 
 /* Medium devices (tablets, 768px and up) */
