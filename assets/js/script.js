@@ -257,6 +257,8 @@ function optionFolder(folderId) {
 
   modalQuestion.textContent = currentFolder.cards[currentCardIndex].question;
   modal.style.display="flex";
+
+  showCurrentQuestion();
 }
 
 
@@ -275,18 +277,21 @@ document.getElementById("btn-click-fav").addEventListener("click", function () {
   if (!currentFolder) return;
   const currentCard = currentFolder.cards[currentCardIndex];
   currentCard.favourite = !currentCard.favourite;
+
   showCurrentQuestion(); 
 });
-
-
 
 // show current question
 function showCurrentQuestion() {
     if (!currentFolder) return;
   const modalQuestion = document.getElementById("modal-question");
   const favBtn = document.querySelector("#btn-click-fav i");
+  const revealBtnText=document.querySelector("#btn-reveal span")
 
   modalQuestion.textContent=currentFolder.cards[currentCardIndex].question;
+
+  revealAnswer=false;
+  revealBtnText.textContent="Reveal Answer"
 
   if (currentFolder.cards[currentCardIndex].favourite) {
     favBtn.classList.remove("fa-regular");
@@ -334,7 +339,7 @@ function gotoNextCard() {
 
   currentCardIndex++;
 
-  if (currentCardIndex >= currentFolder.card.length) {
+  if (currentCardIndex >= currentFolder.cards.length) {
     showFinalResults();
     return;
   }
@@ -355,4 +360,22 @@ document.getElementById("btn-click-left").addEventListener("click", function(){
 
 
 // show final result
-//function showFinalResults() {}
+function showFinalResults(){
+  const modalQuestion=document.getElementById("modal-question");
+
+  const rememberedCount = currentFolder.cards.filter(card=>card.remembered).length;
+  const notRememberedCount= currentFolder.cards.filter(card=>card.notRemembered).length;
+  const favouriteCount= currentFolder.cards.filter(card=>card.favourite).length;
+  modalQuestion.innerHTML = 
+  `<h1>Revision complete! </h1>
+  <br>
+  <br>
+  <h2>Remebered Cards : ${rememberedCount} </h2>
+  <h2>Not Remembered : ${notRememberedCount} </h2>
+  <h2>Favourite Cards : ${favouriteCount} </h2>
+  <br>
+  <h2>Total Cards: ${currentFolder.cards.length} </h2>`;
+
+  document.querySelector(".display-answer").style.display="none";
+  document.querySelector(".modal-click-button").style.display="none";
+}
