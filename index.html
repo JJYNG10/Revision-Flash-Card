@@ -62,7 +62,6 @@
               class="col-12 d-flex justify-content-between align-items-center"
             >
               <span class="sub-title"> My Cards </span>
-              <i class="fa-solid fa-filter me-5"></i>
             </div>
 
             <div class="col-12 col-md-8 col-lg-6">
@@ -73,9 +72,14 @@
 
         <div id="revision-modal" class="revision-modal" style="display: none">
           <div class="modal-content">
-            <button id="close-modal-btn" type="button">
-              <i class="fa-solid fa-x"></i>
-            </button>
+            <div class="modal-header">
+              <h1 id="folder-title" class="folder-title"></h1>
+              <div class="card-progress" id="card-progress"></div>
+
+              <button id="close-modal-btn" type="button">
+                <i class="fa-solid fa-x"></i>
+              </button>
+            </div>
 
             <!-- display card questions -->
             <div class="question-card" id="question-card">
@@ -91,15 +95,18 @@
 
             <!-- navigate buttons -->
             <div class="modal-click-button">
-              <button id="btn-click-left" class="btn-icon">
+              <button id="btn-click-left" class="btn-icon icon-text">
                 <i class="fa-solid fa-circle-arrow-left icon"></i>
+                <span>To Review</span>
               </button>
 
-              <button id="btn-click-fav" class="btn-icon">
+              <button id="btn-click-fav" class="btn-icon icon-text">
                 <i class="fa-regular fa-star icon"></i>
+                <span>Favourite</span>
               </button>
-              <button id="btn-click-right" class="btn-icon">
+              <button id="btn-click-right" class="btn-icon icon-text">
                 <i class="fa-solid fa-circle-right icon"></i>
+                <span>Mastered</span>
               </button>
             </div>
           </div>

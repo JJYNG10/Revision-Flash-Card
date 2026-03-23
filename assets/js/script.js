@@ -258,6 +258,8 @@ function optionFolder(folderId) {
   const modal= document.getElementById("revision-modal");
   const modalQuestion=document.getElementById("modal-question");
 
+  document.getElementById("folder-title").textContent=currentFolder.name;
+
   modalQuestion.textContent = currentFolder.cards[currentCardIndex].question;
   modal.style.display="flex";
 
@@ -304,9 +306,13 @@ function showCurrentQuestion() {
   const modalQuestion = document.getElementById("modal-question");
   const favBtn = document.querySelector("#btn-click-fav i");
   const revealBtnText=document.querySelector("#btn-reveal span")
+const progressText = document.getElementById("card-progress");
 
   modalQuestion.textContent=currentFolder.cards[currentCardIndex].question;
 
+  //show card count
+  progressText.textContent = `${currentCardIndex + 1} / ${currentFolder.cards.length}`;
+  
   revealAnswer=false;
   revealBtnText.textContent="Reveal Answer"
 
@@ -390,13 +396,14 @@ function animateToNextCard(direction){
   setTimeout(() =>{
     gotoNextCard();
 
-    questionCard.classList.remove("slid-left","slide-right");
+    questionCard.classList.remove("slide-left","slide-right");
+    questionCard.classList.add("slide-reset");
 
     setTimeout(() => {
     questionCard.classList.remove("slide-reset");
-  },20);}300);
+  },20);
+},300);
 }
-
 
 // show final result
 function showFinalResults(){

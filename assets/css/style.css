@@ -137,20 +137,39 @@ h3 {
 .modal-content {
   background: white;
   width: 100%;
-  max-width: 100%;
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  height:100% ;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+padding: 14px;
+padding-right: 40px;
+box-sizing: border-box;
 }
 
   #modal-question{
-  font-size: 40px;
-  padding: 0px 20px;  
+  font-size: clamp(2rem, 6vw, 2.5rem);
+  padding: 0px 12px;  
   width: 100%;
   text-align: center;
   }
+
+/*modal folder name*/
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 50px;
+  padding-left: 20px;
+  padding-top: 20px;
+
+}
+.folder-title {
+  font-family: --primary-font;
+  font-size: clamp(40px, 4vw, 30px);
+  font-weight: 600;
+  color: var(--primary-color-darkpurple);
+}
+
 
 /* Answer buttons */
 .display-answer {
@@ -168,15 +187,36 @@ h3 {
   font-weight: 600;
 }
 
+/* progress count */
+.card-progress {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary-color-lightpurple);
+}
 
   /* Modal buttons */
 .modal-click-button{
   position: absolute;
-  bottom: 90px;
+  bottom: 80px;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  top: 85%;
+  padding-right: 15px;
+}
+
+.icon-text{
+    display: flex;
+  flex-direction: column;   /* icon on top, text below */
+  align-items: center;
+  gap: 6px;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color:var(--primary-color-lightpurple);
 }
 
   .btn-icon{ 
@@ -187,7 +227,7 @@ h3 {
   }
 
    .btn-icon i{
-  font-size: 3rem;
+  font-size: clamp(2rem, 7vw, 3rem);
   display: flex;
   align-items: center;
    } 
@@ -197,29 +237,34 @@ h3 {
 }
 
   #close-modal-btn {
-  position: absolute;
-  top: 20px;
-  right: 40px;
+  position: static;
   font-size: 28px;
   border: none;
   background: transparent;
   cursor: pointer;
+  padding: 0px 30px 0px 0px;
+  margin: 0;
+  line-height: 1;
 }
 
 /*question card border */
 .question-card {
   position: relative;
-  width: 88%;
-  height: 82%;
+  width: 90%;
+  height: 80%;
   border: 2px solid var(--primary-color-lightpurple);
-  box-sizing: border-box;
+  border-radius:  12px;
   padding: 2rem;
+  margin: 0 auto;
 
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   transition: transform 0.35s ease,opacity 0.35s ease;
+  justify-self:center;
+  align-self:stretch;
+
 }
 
 .slide-left{
@@ -230,7 +275,7 @@ h3 {
   transform: translateX(120%);
   opacity: 0;
 }
-.slid-reset{
+.slide-reset{
   transform: translateX(0);
   opacity: 1;
 }
