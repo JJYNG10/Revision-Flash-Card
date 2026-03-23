@@ -2,7 +2,7 @@
 const cardFolders = [
 {
   id:1,
-  name:"Life in Uk",
+  name:"Life in UK",
   description:"Most popular 24 question for life in UK exam",
   difficulty: "medium",
   favourite: false,
@@ -200,7 +200,420 @@ const cardFolders = [
         favourite: false
       },
   ]
-}
+},
+{
+  id:2,
+  name:"Spanish travel words",
+  description:"15 Native Spanish travel phrases",
+  difficulty: "medium",
+  favourite: false,
+  cards: [
+      {
+        id: 1,
+        question: "Hola",
+        answer: "Hello",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 2,
+        question: "Disculpe",
+        answer: "Excuse me",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 3,
+        question: "Gracias",
+        answer: "Thank you",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 4,
+        question: "Por favor",
+        answer: "Please",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 5,
+        question: "De nada",
+        answer: "You are welcome",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 6,
+        question: "Buenos días",
+        answer: "Good morning",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 7,
+        question: "Buenas tardes",
+        answer: "Good afternoon",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 8,
+        question: "Buenas noches",
+        answer: "Good night",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 9,
+        question: "Mucho gusto",
+        answer: "Nice to meet you",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 10,
+        question: "¿Qué hora es?",
+        answer: "What time is it?",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 11,
+        question: "Sí, tengo mi pasaporte",
+        answer: "Yes, I have my passport",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 12,
+        question: "¿Me puede ayudar, por favor?",
+        answer: "Can you please help me?",
+        remembered: false,
+        notRemembered: false,
+        favourite: false,
+      },
+      {
+        id: 13,
+        question: "¿Habla inglés?",
+        answer: "Do you speak English?",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 14,
+        question: "¿Está incluido el desayuno?",
+        answer: "Is breakfast included?",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 15,
+        question: "Cual es la contraseña para el Wi-Fi?",
+        answer: "What is the Wi-Fi password?",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+  ]
+},
+{
+  id:3,
+  name:"Basic HTML tags",
+  description:"The most important html tags to remember ",
+  difficulty: "easy",
+  favourite: false,
+  cards: [
+      {
+        id: 1,
+        question: "<a> ",
+        answer: "for link",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 2,
+        question: "<b>",
+        answer: "to make bold text",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 3,
+        question: "<strong>",
+        answer: "for bold text with emphasys",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 4,
+        question: "<body>",
+        answer: "main HTML part",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 5,
+        question: "<br>",
+        answer: "for break",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 6,
+        question: "<div>",
+        answer: " it is a division or part of an HTML document",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 7,
+        question: "<h1>",
+        answer: "for titles",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 8,
+        question: "<i>",
+        answer: "to make an italic text",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 9,
+        question: "<src>",
+        answer: "Source link",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 10,
+        question: "<img>",
+        answer: "or images in document",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+        ]
+},
+{
+  id:4,
+  name:"Common Chemistry periodic",
+  description:"Scientific chart organizing all 118 known chemical elements by increasing atomic number (protons)",
+  difficulty: "hard",
+  favourite: false,
+  cards: [
+      {
+        id: 1,
+        question: " H",
+        answer: "Hydrogen",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 2,
+        question: "He",
+        answer: "Helium ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 3,
+        question: "Li",
+        answer: "Lithium ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 4,
+        question: "Be",
+        answer: "Beryllium",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 5,
+        question: "B",
+        answer: "Boron",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 6,
+        question: "C",
+        answer: " Carbon",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 7,
+        question: "N",
+        answer: "Nitrogen ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 8,
+        question: "O",
+        answer: "Oxygen ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 9,
+        question: "F",
+        answer: "Fluorine ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 10,
+        question: "Na",
+        answer: "Neon ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+            {
+        id: 11,
+        question: "Na",
+        answer: "Sodium ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+        ]
+},
+
+{
+  id:5,
+  name:"Basic uk roadman slang",
+  description:"London-influenced dialect",
+  difficulty: "hard",
+  favourite: false,
+  cards: [
+      {
+        id: 1,
+        question: " Wagwan ",
+        answer: "Hello, how are you?",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 2,
+        question: "Ends",
+        answer: "Your local area or neighborhood ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 3,
+        question: "Mandem",
+        answer: "A group of male friends ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 4,
+        question: "Bare",
+        answer: "A lot or very",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 5,
+        question: "Peng",
+        answer: "Attractive person or high-quality item",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 6,
+        question: "Safe",
+        answer: "  Cool, good, or used as a greeting",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 7,
+        question: "Wasteman",
+        answer: "Someone useless or annoying ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 8,
+        question: "Peak",
+        answer: "Unfortunate, bad, or embarrassing ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 9,
+        question: "Allow it",
+        answer: " Stop it, leave it out, or let it go ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+      {
+        id: 10,
+        question: "Bruv",
+        answer: "Brother or close friend",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+            {
+        id: 11,
+        question: "Garms",
+        answer: "Clothing ",
+        remembered: false,
+        notRemembered: false,
+        favourite: false
+      },
+        ]
+},
 ]
 
 function displayCardFolder() {
@@ -208,14 +621,19 @@ function displayCardFolder() {
   container.innerHTML = "";
 
   cardFolders.forEach(folder => {
+    
+    const favouriteIconClass = folder.favourite ? "fa-solid" : "fa-regular";
+
     const folderHTML= `
         <div class="card folder-card" data-id="${folder.id}">
           <div class="card-body">
             <h2>${folder.name}</h2>
             <p>${folder.description}</p>
-            <p>${folder.cards.length}</p>
+            <p>${folder.cards.length} cards</p>
             <div class="card-actions">
-              <i class="fa-regular fa-star icon"></i>  
+            <i class="${favouriteIconClass} fa-star icon"
+              onclick="event.stopPropagation(); toggleFolderFavourite(${folder.id})"
+            ></i>  
               <i class="fa-solid fa-gear icon"></i>
             </div>
           </div>
@@ -426,3 +844,18 @@ function showFinalResults(){
   document.querySelector(".modal-click-button").style.display="none";
 }
 
+function sortFolderByFavourite(){
+  cardFolders.sort((a, b) => {
+    return Number(b.favourite) - Number(a.favourite);
+  });
+}
+
+function toggleFolderFavourite(folderId) {
+  const folder=cardFolders.find(folder => folder.id === folderId);
+
+  if (!folder) return;
+  folder.favourite=!folder.favourite;
+
+  sortFolderByFavourite();
+  displayCardFolder();
+}
