@@ -855,13 +855,13 @@ function animateToNextCard(direction){
 // show final result
 function showFinalResults(){
   const modalQuestion=document.getElementById("modal-question");
-
+  const questionCard=document.getElementById("question-card");
+   questionCard.classList.add("no-border");
   const rememberedCount = currentFolder.cards.filter(card=>card.remembered).length;
   const notRememberedCount= currentFolder.cards.filter(card=>card.notRemembered).length;
   const favouriteCount= currentFolder.cards.filter(card=>card.favourite).length;
   modalQuestion.innerHTML = 
   `<h1>Session Summary </h1>
-  <br>
   <br>
   <h2>Mastered: ${rememberedCount} </h2>
   <h2>To Review: ${notRememberedCount} </h2>

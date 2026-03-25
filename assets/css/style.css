@@ -232,7 +232,7 @@ box-sizing: border-box;
    } 
 
   .fa-solid.fa-star {
-  color: gold;
+  color: var(--primary-color-darkpurple);
 }
 
   #close-modal-btn {
@@ -301,8 +301,8 @@ z-index: 2000;
 
 #close-settings-btn {
   position: absolute;
-  top: 8px;
-  right: 10px;
+  top: -50px;
+  right: 0;
   border: none;
   background: transparent;
   font-size: 18px;
@@ -325,30 +325,39 @@ z-index: 2000;
   cursor: pointer;
 }
 
+/* show result border fix */
+.no-border{
+  border: none, !important;
+}
+
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .logo {
-    width: 150px;
+@media (min-width: 768px) and (max-width: 991px) {
+
+.title .sub-title{
+  padding: 0px 60px 0px 0px;
+}
+
+.sub-title{
+  padding-bottom: 20px;
+}
+
+#revision-cards {
+    padding: 0px 0px 0px 20px;
   }
+
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .logo {
-    width: 200px;
-  }
+
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  .logo {
-    width: 250px;
-  }
+
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-  .logo {
-    width: 250px;
-  }
+
 }
