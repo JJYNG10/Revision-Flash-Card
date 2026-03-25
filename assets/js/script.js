@@ -6,6 +6,7 @@ const cardFolders = [
   description:"Most popular 24 question for life in UK exam",
   difficulty: "medium",
   favourite: false,
+  cardColor: null,
   cards: [
       {
         id: 1,
@@ -207,6 +208,7 @@ const cardFolders = [
   description:"15 Native Spanish travel phrases",
   difficulty: "medium",
   favourite: false,
+  cardColor: null,
   cards: [
       {
         id: 1,
@@ -336,6 +338,7 @@ const cardFolders = [
   description:"The most important html tags to remember ",
   difficulty: "easy",
   favourite: false,
+  cardColor: null,
   cards: [
       {
         id: 1,
@@ -425,6 +428,7 @@ const cardFolders = [
   description:"Scientific chart organizing all 118 known chemical elements by increasing atomic number (protons)",
   difficulty: "hard",
   favourite: false,
+  cardColor: null,
   cards: [
       {
         id: 1,
@@ -523,6 +527,7 @@ const cardFolders = [
   description:"London-influenced dialect",
   difficulty: "hard",
   favourite: false,
+  cardColor: null,
   cards: [
       {
         id: 1,
@@ -621,20 +626,21 @@ function displayCardFolder() {
   container.innerHTML = "";
 
   cardFolders.forEach(folder => {
-    
+    const borderStyle=folder.cardColor?`border-color:${folder.cardColor};`:"";
+    const textStyle=folder.cardColor?`color:${folder.cardColor};`:"";
     const favouriteIconClass = folder.favourite ? "fa-solid" : "fa-regular";
 
     const folderHTML= `
-        <div class="card folder-card" data-id="${folder.id}">
+        <div class="card folder-card" data-id="${folder.id}" style="${borderStyle}">
           <div class="card-body">
-            <h2>${folder.name}</h2>
-            <p>${folder.description}</p>
-            <p>${folder.cards.length} cards</p>
+            <h2 style="${textStyle}>${folder.name}</h2>
+            <p style="${textStyle}>${folder.description}</p>
+            <p style="${textStyle}>${folder.cards.length} cards</p>
             <div class="card-actions">
             <i class="${favouriteIconClass} fa-star icon"
               onclick="event.stopPropagation(); toggleFolderFavourite(${folder.id})"
             ></i>  
-              <i class="fa-solid fa-gear icon"></i>
+              <i class="fa-solid fa-gear icon" onclick="event.stopPropagation(); openFolderSettings(${folder.id})"></i>
             </div>
           </div>
         </div>
@@ -661,6 +667,27 @@ document.addEventListener("click", function(e) {
   }
 );
 
+//question card colour
+function questionCardColour(){
+  if (!currentFolder) return;
+  const questionCard =document.getElementById("question-card");
+  const modalQuestion=document.getElementById("modal-question");
+  const folderTitle =document.getElementById("folder-title");
+  const revealText =document.querySelector("#btn-reveal span");
+
+  if (currentFolder.cardColor){
+    questionCard.style.borderColor = currentFolder.cardColor;
+    modalQuestion.style.color = currentFolder.cardColor;
+    folderTitle.style.color = currentFolder.cardColor;
+    revealText.style.color = currentFolder.cardColor;
+    } else {
+ questionCard.style.borderColor = "";
+    modalQuestion.style.color = "";
+    folderTitle.style.color = "";
+    revealText.style.color = "";
+  }
+}
+
 // Open revision cards
 function optionFolder(folderId) {
   console.log("opened folder:",folderId)
@@ -678,10 +705,11 @@ function optionFolder(folderId) {
 
   document.getElementById("folder-title").textContent=currentFolder.name;
 
-  modalQuestion.textContent = currentFolder.cards[currentCardIndex].question;
+ // modalQuestion.textContent = currentFolder.cards[currentCardIndex].question;
   modal.style.display="flex";
 
   showCurrentQuestion();
+  questionCardColour()
 }
 
 // shuffle revision cards
@@ -733,6 +761,8 @@ const progressText = document.getElementById("card-progress");
   
   revealAnswer=false;
   revealBtnText.textContent="Reveal Answer"
+
+questionCardColour();
 
   if (currentFolder.cards[currentCardIndex].favourite) {
     favBtn.classList.remove("fa-regular");
@@ -859,3 +889,33 @@ function toggleFolderFavourite(folderId) {
   sortFolderByFavourite();
   displayCardFolder();
 }
+
+// colour modal setting
+
+let currentSettingsFolderId=null;
+function openFolderSettings(folderId){
+  currentSettingsFolderId=folderId;
+  document.getElementById("settings-modal").style.display="flex";
+}
+
+document.getElementById("close-settings-btn").addEventListener("click",function(){
+document.getElementById("settings-modal").style.display="none"});
+
+document.querySelectorAll(".colour-btn").forEach(btn=>btn.addEventListener("click",function(){
+  if (currentSettingsFolderId===null) return;
+
+  const selectedColour=this.dataset.colour;
+
+  const folder=cardFolders.find(f=>f.id===currentSettingsFolderId);
+  if (!folder)return;
+
+  folder.cardColor=selectedColour:
+
+  displayCardFolder()
+
+  if(currentFolder && currentFolder.id === folder.id){
+    questionCardColour();
+  }
+  document.getElementById("settings-modal").style.display="none";
+});
+});
