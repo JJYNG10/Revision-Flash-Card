@@ -628,19 +628,20 @@ function displayCardFolder() {
   cardFolders.forEach(folder => {
     const borderStyle=folder.cardColor?`border-color:${folder.cardColor};`:"";
     const textStyle=folder.cardColor?`color:${folder.cardColor};`:"";
+    const iconStyle=folder.cardColor?`color:${folder.cardColor};`:"";
     const favouriteIconClass = folder.favourite ? "fa-solid" : "fa-regular";
 
     const folderHTML= `
         <div class="card folder-card" data-id="${folder.id}" style="${borderStyle}">
           <div class="card-body">
-            <h2 style="${textStyle}>${folder.name}</h2>
-            <p style="${textStyle}>${folder.description}</p>
-            <p style="${textStyle}>${folder.cards.length} cards</p>
+            <h2 style="${textStyle}">${folder.name}</h2>
+            <p style="${textStyle}">${folder.description}</p>
+            <p style="${textStyle}">${folder.cards.length} cards</p>
             <div class="card-actions">
-            <i class="${favouriteIconClass} fa-star icon"
+            <i class="${favouriteIconClass} fa-star icon" style="${iconStyle}"
               onclick="event.stopPropagation(); toggleFolderFavourite(${folder.id})"
             ></i>  
-              <i class="fa-solid fa-gear icon" onclick="event.stopPropagation(); openFolderSettings(${folder.id})"></i>
+              <i class="fa-solid fa-gear icon" style="${iconStyle}" onclick="event.stopPropagation(); openFolderSettings(${folder.id})"></i>
             </div>
           </div>
         </div>
@@ -678,13 +679,11 @@ function questionCardColour(){
   if (currentFolder.cardColor){
     questionCard.style.borderColor = currentFolder.cardColor;
     modalQuestion.style.color = currentFolder.cardColor;
-    folderTitle.style.color = currentFolder.cardColor;
-    revealText.style.color = currentFolder.cardColor;
+     revealText.style.color = currentFolder.cardColor;
     } else {
  questionCard.style.borderColor = "";
     modalQuestion.style.color = "";
-    folderTitle.style.color = "";
-    revealText.style.color = "";
+     revealText.style.color = "";
   }
 }
 
@@ -901,7 +900,7 @@ function openFolderSettings(folderId){
 document.getElementById("close-settings-btn").addEventListener("click",function(){
 document.getElementById("settings-modal").style.display="none"});
 
-document.querySelectorAll(".colour-btn").forEach(btn=>btn.addEventListener("click",function(){
+document.querySelectorAll(".colour-btn").forEach(btn=>{btn.addEventListener("click",function(){
   if (currentSettingsFolderId===null) return;
 
   const selectedColour=this.dataset.colour;
@@ -909,7 +908,7 @@ document.querySelectorAll(".colour-btn").forEach(btn=>btn.addEventListener("clic
   const folder=cardFolders.find(f=>f.id===currentSettingsFolderId);
   if (!folder)return;
 
-  folder.cardColor=selectedColour:
+  folder.cardColor=selectedColour;
 
   displayCardFolder()
 

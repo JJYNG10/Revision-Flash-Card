@@ -164,7 +164,6 @@ box-sizing: border-box;
 
 }
 .folder-title {
-  font-family: --primary-font;
   font-size: clamp(30px, 4vw, 30px);
   font-weight: 600;
   color: var(--primary-color-darkpurple);
