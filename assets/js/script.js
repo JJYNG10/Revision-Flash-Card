@@ -704,6 +704,14 @@ function optionFolder(folderId) {
 
   document.getElementById("folder-title").textContent=currentFolder.name;
 
+if (window.innerWidth >= 1200) {
+    modal.classList.add("desktop-open");
+    modal.style.display = "block";
+  } else {
+    modal.classList.remove("desktop-open");
+    modal.style.display = "flex";
+  }
+  
  // modalQuestion.textContent = currentFolder.cards[currentCardIndex].question;
   modal.style.display="flex";
 
@@ -725,6 +733,7 @@ document.addEventListener("click", function(e) {
      const modal = document.getElementById("revision-modal");
     if (closeBtn) {
       modal.style.display="none";
+      modal.classList.remove("desktop-open");
     }
   }
 );

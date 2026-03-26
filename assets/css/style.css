@@ -22,7 +22,7 @@
   font-family: var(--primary-font);
   font-size: 35px;
   font-weight: 500;
-  margin:30px 20px 15px 30px;
+  margin:30px 20px 15px 15px;
   padding-bottom: 0;
   color: var(--primary-color-darkpurple);
 }
@@ -31,7 +31,7 @@
   font-family: var(--secondary-font);
   font-size: 25px;
   font-weight: 300;
-  margin:0px 30px;
+  margin:10px 15px;
   padding-bottom: 0;
   color: var(--primary-color-darkpurple);
 }
@@ -119,6 +119,10 @@ h3 {
 
 .icon:active {
   transform: scale(1.1);
+}
+
+.desktop-study-layout {
+  display: block;
 }
 
 /* pop up revision modal */
@@ -354,10 +358,76 @@ z-index: 2000;
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+#revision-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 0;
+}
 
+#revision-cards .card{
+  margin: 0;
+  width: 100%;
+}
+
+.col-lg-4{
+  width: 100%;
+}
+
+.desktop-study-layout{
+  display: grid;
+  grid-template-columns: minmax(560px, 1fr) minmax(520px, 760px);
+    gap: 32px;
+    align-items: start;
+    min-height: 100vh;
+    padding:24px 32px;
+    box-sizing: border-box;
+}
+
+.cards-panel.title{
+  min-width: 0 0 24px 0;
+}
+.cards-panel.sub-title{
+  display: block;
+  min-width: 0 0 24px 0;
+}
+
+ #revision-modal {
+    position: sticky;
+    top: 0px;
+    display: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  #revision-modal.desktop-open {
+    display: block;
+  }
+
+  #revision-modal .modal-content {
+    height: 100%;
+    width: 100%;
+    background: white;
+    border-radius: 18px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
+#revision-cards {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+  }
 
+.cards-panel.title{
+  margin: 0 20px 24px 0;
+  text-align: left;
+}
+.cards-panel.sub-title{
+  text-align: left;
+ margin: 0 20px 24px 0;
+}
 }
