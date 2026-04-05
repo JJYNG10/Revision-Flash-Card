@@ -704,6 +704,8 @@ function optionFolder(folderId) {
 
   document.getElementById("folder-title").textContent=currentFolder.name;
 
+  resetSessionUI();
+
 if (window.innerWidth >= 1200) {
     modal.classList.add("desktop-open");
     modal.style.display = "block";
@@ -869,6 +871,7 @@ function showFinalResults(){
   const rememberedCount = currentFolder.cards.filter(card=>card.remembered).length;
   const notRememberedCount= currentFolder.cards.filter(card=>card.notRemembered).length;
   const favouriteCount= currentFolder.cards.filter(card=>card.favourite).length;
+  
   modalQuestion.innerHTML = 
   `<h1>Session Summary </h1>
   <br>
@@ -927,3 +930,17 @@ document.querySelectorAll(".colour-btn").forEach(btn=>{btn.addEventListener("cli
   document.getElementById("settings-modal").style.display="none";
 });
 });
+
+
+// reset session UI
+function resetSessionUI() {
+  const questionCard = document.getElementById("question-card");
+  const displayAnswer= document.querySelector(".display-answer");
+  const modalButtons= document.querySelector(".modal-click-button");
+  const progressText= document.getElementById("card-progress");
+
+  questionCard.classList.remove ("no-border", "slide-left", "slide-right", "slid-reset");
+  displayAnswer.style.display="flex";
+  modalButtons.style.display="flex";
+  progressText.style.display="block";
+}
