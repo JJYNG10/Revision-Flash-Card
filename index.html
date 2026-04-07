@@ -49,83 +49,84 @@
             <div class="title">
               <span>Revision Cards</span>
             </div>
-                <span class="sub-title"> My Cards </span>
-                <div id="revision-cards"></div>
-        </div>
+            <span class="sub-title"> My Cards </span>
+            <div id="revision-cards"></div>
+          </div>
 
-        <div id="revision-modal" class="revision-modal" style="display: none">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 id="folder-title" class="folder-title"></h1>
-              <div class="card-progress" id="card-progress"></div>
+          <div id="revision-modal" class="revision-modal" style="display: none">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 id="folder-title" class="folder-title"></h1>
+                <div class="card-progress" id="card-progress"></div>
 
-              <button id="close-modal-btn" type="button">
-                <i class="fa-solid fa-x"></i>
-              </button>
-            </div>
+                <button id="close-modal-btn" type="button">
+                  <i class="fa-solid fa-x"></i>
+                </button>
+              </div>
 
-            <!-- display card questions -->
-            <div class="question-card" id="question-card">
-              <h1 id="modal-question"></h1>
+              <!-- display card questions -->
+              <div class="question-card" id="question-card">
+                <h1 id="modal-question"></h1>
 
-              <!-- reveal answer button -->
-              <div class="display-answer">
-                <button class="btn-icon icon" id="btn-reveal">
-                  <span>Reveal answer</span>
+                <!-- reveal answer button -->
+                <div class="display-answer">
+                  <button class="btn-icon icon" id="btn-reveal">
+                    <span>Reveal answer</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- navigate buttons -->
+              <div class="modal-click-button">
+                <button id="btn-click-left" class="btn-icon icon-text">
+                  <i class="fa-solid fa-circle-arrow-left icon"></i>
+                  <span>To Review</span>
+                </button>
+
+                <button id="btn-click-fav" class="btn-icon icon-text">
+                  <i class="fa-regular fa-star icon"></i>
+                  <span>Favourite</span>
+                </button>
+                <button id="btn-click-right" class="btn-icon icon-text">
+                  <i class="fa-solid fa-circle-right icon"></i>
+                  <span>Mastered</span>
                 </button>
               </div>
             </div>
-
-            <!-- navigate buttons -->
-            <div class="modal-click-button">
-              <button id="btn-click-left" class="btn-icon icon-text">
-                <i class="fa-solid fa-circle-arrow-left icon"></i>
-                <span>To Review</span>
-              </button>
-
-              <button id="btn-click-fav" class="btn-icon icon-text">
-                <i class="fa-regular fa-star icon"></i>
-                <span>Favourite</span>
-              </button>
-              <button id="btn-click-right" class="btn-icon icon-text">
-                <i class="fa-solid fa-circle-right icon"></i>
-                <span>Mastered</span>
-              </button>
-            </div>
           </div>
-        </div>
 
-        <!--colour modal-->
-        <div id="settings-modal" class="settings-modal" style="display: none">
-          <div class="settings-box">
-            <h2>Choose a Card Colour</h2>
-            <button id="close-settings-btn">✕</button>
-            <div class="colour-options">
-              <button
-                class="colour-btn"
-                data-colour="#9C8CFF"
-                style="background: #9c8cff"
-              ></button>
-              <button
-                class="colour-btn"
-                data-colour="#7B6FE8"
-                style="background: #7b6fe8"
-              ></button>
-              <button
-                class="colour-btn"
-                data-colour="#AED9E0"
-                style="background: #aed9e0"
-              ></button>
-              <button
-                class="colour-btn"
-                data-colour="#F9CB40"
-                style="background: #f9cb40"
-              ></button>
-              <button
-                class="colour-btn"
-                data-colour="#FFA69E"
-                style="background: #ffa69e"
-              ></button>
+          <!--colour modal-->
+          <div id="settings-modal" class="settings-modal" style="display: none">
+            <div class="settings-box">
+              <h2>Choose a Card Colour</h2>
+              <button id="close-settings-btn">✕</button>
+              <div class="colour-options">
+                <button
+                  class="colour-btn"
+                  data-colour="#9C8CFF"
+                  style="background: #9c8cff"
+                ></button>
+                <button
+                  class="colour-btn"
+                  data-colour="#7B6FE8"
+                  style="background: #7b6fe8"
+                ></button>
+                <button
+                  class="colour-btn"
+                  data-colour="#AED9E0"
+                  style="background: #aed9e0"
+                ></button>
+                <button
+                  class="colour-btn"
+                  data-colour="#F9CB40"
+                  style="background: #f9cb40"
+                ></button>
+                <button
+                  class="colour-btn"
+                  data-colour="#FFA69E"
+                  style="background: #ffa69e"
+                ></button>
+              </div>
             </div>
           </div>
         </div>
