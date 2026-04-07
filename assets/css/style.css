@@ -385,11 +385,11 @@ z-index: 2000;
 }
 
 .cards-panel.title{
-  min-width: 0 0 24px 0;
+  min-width:24px;
 }
 .cards-panel.sub-title{
   display: block;
-  min-width: 0 0 24px 0;
+  min-width:24px;
 }
 
  #revision-modal {
